@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p>Thank you for your payment!</p>
+    <p>Here are the items you purchased:</p>
+    <ul>
+      {{#each items}}
+        <li>
+          <strong>Name: </strong>{{this.name}}<br />
+          <strong>Amount: </strong>{{this.amount}}<br />
+          <strong>Quantity: </strong>{{this.quantity}}
+        </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>
