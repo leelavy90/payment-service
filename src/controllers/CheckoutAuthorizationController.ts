@@ -19,15 +19,11 @@ export class CheckoutAuthorizationController {
   @Post()
   async receiveCheckoutStatus(@Body() body: any, @Headers() headers: any) {
     const { authorizationStatus, authorizationId } = body
-    console.log('receiveCheckoutStatus body')
-    console.log(body)
     const shouldSendConfirmationEmail = this.verifyWebhookOrigin(body, headers) && authorizationStatus === 'Captured'
     if (!shouldSendConfirmationEmail) {
       return
     }
     const paymentStatusData = await this.paymentService.getPaymentStatusByAuthId(authorizationId)
-    console.log('receiveCheckoutStatus paymentStatusData')
-    console.log(paymentStatusData)
     const paymentStatusDTO = this.paymentService.createPaymentStatusDTO(paymentStatusData.data)
     await this.mailingService.sendPaymentConfirmationEmail(paymentStatusDTO)
   }

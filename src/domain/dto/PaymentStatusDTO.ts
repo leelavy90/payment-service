@@ -17,9 +17,10 @@ export class PaymentStatusDTO {
   @Type(() => ItemDTO)
   items: ItemDTO[]
 
-  constructor(authorizationStatus: string, amount: number, items: ItemDTO[]) {
+  constructor(authorizationStatus: string, amount: number, email: string, items: ItemDTO[]) {
     this.authorizationStatus = authorizationStatus
     this.amount = amount
+    this.email = email
     this.items = items
   }
 }

@@ -29,8 +29,8 @@ export class PaymentsService implements OnModuleInit {
   }
 
   public createPaymentStatusDTO(paymentStatusData) {
-    const { authorizationStatus, amount, items } = paymentStatusData
-    return new PaymentStatusDTO(authorizationStatus, amount, items)
+    const { authorizationStatus, consumer, amount, items } = paymentStatusData
+    return new PaymentStatusDTO(authorizationStatus, amount, consumer.email, items)
   }
 
   private async subscribeToCheckoutAuthorization() {
