@@ -4,4 +4,5 @@ This is a simple payment service API that exposes endpoints to receive payment r
 
 ## Usage
 
+update env variables accordingly(use a tunnel service to expose localhost, such as ngrok and update BASE_URL)
 run npm install then npm start
