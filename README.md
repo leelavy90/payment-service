@@ -6,3 +6,9 @@ This is a simple payment service API that exposes endpoints to receive payment r
 
 update env variables accordingly(use a tunnel service to expose localhost, such as ngrok and update BASE_URL)
 run npm install then npm start
+
+### Notes
+
+1. Make sure a local tunnel url is set in env variable BASE_URL
+2. Make sure a vendor is created and accepting payments, then create payment with /create-payment endpoint
+3. Make sure email is provided in create-payment request
